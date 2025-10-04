@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Tło naśladujące tło telefonu */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 450px; /* Ograniczenie do szerokości typowej dla aplikacji mobilnej */
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header-app {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #007bff; /* Kolor nagłówka aplikacji */
+    color: white;
+}
+
+.back-arrow {
+    font-size: 24px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.header-app h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.document-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0056b3, #007bff); /* Gradient imitujący wygląd dokumentu */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header h2 {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.status-ok {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #00ff00;
+    margin-bottom: 15px;
+}
+
+.data-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5); /* Separator danych */
+    padding-bottom: 5px;
+}
+
+.label {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.value {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 0;
+    /* Wizualne wyróżnienie edytowalnych pól */
+    border-bottom: 2px solid transparent; 
+    transition: border-bottom 0.3s;
+}
+
+.value[contenteditable="true"]:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15); /* Podświetlenie edytowanego pola */
+    border-bottom: 2px solid yellow; /* Wyraźne oznaczenie, że można edytować */
+    cursor: text;
+}
+
+.photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.photo-placeholder img {
+    width: 100px;
+    height: 130px;
+    background-color: #ddd;
+    border: 3px solid white;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.edit-btn, .save-button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 90%;
+    max-width: 300px;
+    align-self: center;
+}
+
+.save-button {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #28a745;
+    color: white;
+}
+
+.footer-info {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Styl dla miejsca na zdjęcie - domyślnie placeholder */
+#user_photo {
+    content: url('https://via.placeholder.com/100x130?text=ZDJECIE+A'); /* Zastąp to własnym obrazem lub użyj placeholder.com */
+}
