@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usługa Cyfrowa X - mDokument</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="app-container">
-        <header class="top-bar">
-            <span>9:41</span>
-            <div class="battery-status">🔋 92%</div>
-        </header>
-
-        <div class="header-app">
-            <span class="back-arrow" onclick="alert('Wróć do listy dokumentów');">⬅</span>
-            <h1>mDokument Tożsamości X</h1>
+<div class="app-container">
+    <div class="document-card editable-document">
+        
+        <div class="photo-placeholder">
+            <img src="assets/photo.png" alt="Zdjęcie" id="user_photo">
+            <input type="file" id="photo_upload" accept="image/*" style="display: none;" onchange="loadPhoto(event)">
+            <button onclick="document.getElementById('photo_upload').click();" class="edit-btn">Zmień Zdjęcie</button>
         </div>
 
-        <div class="document-card editable-document">
-            <div class="card-header">
-                <h2>DOWÓD OSOBISTY (mX)</h2>
-                <span class="status-ok">✔ Ważny</span>
-            </div>
+        <div class="card-header">
+            <h2>DOWÓD OSOBISTY (mX)</h2>
+            <span class="status-ok">✔ Dokument aktywowany i ważny</span>
+        </div>
 
+        <div class="data-fields">
             <div class="data-row">
-                <span class="label">Imię i Nazwisko:</span>
-                <span class="value" id="imie_nazwisko" contenteditable="true">**IMIĘ NAZWISKO**</span>
+                <span class="label">Imię:</span>
+                <span class="value" id="imie_nazwisko" contenteditable="true">**IMIĘ**</span>
+            </div>
+            
+            <div class="data-row">
+                <span class="label">Nazwisko:</span>
+                <span class="value" id="nazwisko" contenteditable="true">**NAZWISKO**</span>
             </div>
 
             <div class="data-row">
@@ -44,21 +37,14 @@
                 <span class="label">Obywatelstwo:</span>
                 <span class="value" id="obywatelstwo" contenteditable="true">**X**</span>
             </div>
-
-            <div class="photo-placeholder">
-                <img src="assets/photo.png" alt="Zdjęcie" id="user_photo">
-                <input type="file" id="photo_upload" accept="image/*" style="display: none;" onchange="loadPhoto(event)">
-                <button onclick="document.getElementById('photo_upload').click();" class="edit-btn">Zmień Zdjęcie</button>
-            </div>
         </div>
-        
-        <div class="footer-info">
-            <p>Ostatnia aktualizacja: <span id="last_update">**01-01-2099, 12:00:00**</span></p>
-        </div>
-        
-        <button class="save-button" onclick="saveChanges()">Zapisz Zmiany</button>
     </div>
+    
+    <div class="footer-info">
+        <p>Ostatnia aktualizacja: <span id="last_update">**01-01-2099, 12:00:00**</span></p>
+    </div>
+    
+    <button class="save-button" onclick="saveChanges()">Zapisz Zmiany i Aktywuj 👍</button>
+</div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script>
